@@ -1,5 +1,5 @@
 # ODIN prediction model
-This repository includes information on the development, internal validation and external evaluation of the ODIN prediction model.
+This repository includes information on the development, internal validation and external evaluation of the ODIN prediction model. All included files are R-codes for R-version 4.5.2..
 
 ### Data Source
 Data for both the development sample, as well as the external evlauation sample, comes from national registires in the respective countires. The sweidsh and the norwegian legislation prohibits sharing individual-level data publicly. Anybody, who is interested in replicating the study, can apply for data access thorugh the different registry holders.
@@ -9,7 +9,7 @@ The model was developed in Swedish Data and externally evaluated in Norwegian Da
 
 ### Development  & Internal Validation
 The files 1.1 and 1.2 contain code for data preparation and sample description of the Swedish sample 
-The filed 2.1 to 2.4 contain the code for development and internal validation in the Swedish sample for the outcomes 1-year all-cause mortality (2.1), 30-days all-cause mortality (2.2), 1-year overdose mortality (2.3) and 30-days overdose-mortality(2.4).
+The filed 2.1 to 2.4 contain the code for development and internal validation in the Swedish sample for the outcomes 1-year all-cause mortality (2.1), 30-days all-cause mortality (2.2), 1-year overdose mortality (2.3) and 30-days overdose-mortality(2.4). The developed models are Elastic Net models which are tuned and internally validated with a nested 10-fold cross-validation
 
 ### External Evaluation
 File 3.1 and 4 contain code for the data preparation for the external evaluation of the Norwegian Sample and its description. 
