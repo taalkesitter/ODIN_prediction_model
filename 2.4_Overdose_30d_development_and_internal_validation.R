@@ -4,7 +4,7 @@
 # Date......: 15/12/2025
 # Updated...: 28/01/2026 by Taalke Maria Sitter
 # Purpose...:  Model tuning and inetrnal model performance  for prediction
-#             of 1-year overdose mortality after prison release
+#             of 30-days overdose mortality after prison release
 # Note......: 
 # Data used.: outcome_dfs.RData
 
