@@ -173,14 +173,6 @@ g1_V1 <- mutate(eval_df_1, bin = ntile(estimate, 10)) %>%
   ggtitle("1-year All-Cause Mortality Simple Validation")
 
 
-#mark region i want to zoom in
-g1_V1 <- g1_V1 +
-  annotate("rect",
-           xmin = 0, xmax = 0.025,
-           ymin = 0, ymax = 0.025,
-           fill = NA, color = "red", linetype = "dashed")
-
-
 # The distribution plot        
 g2_V1 <- ggplot(eval_df_1, aes(x = estimate)) +
   geom_histogram(fill = "royalblue4", binwidth = 0.001) +
@@ -192,7 +184,7 @@ g2_V1 <- ggplot(eval_df_1, aes(x = estimate)) +
   scale_y_continuous(breaks = seq(0, 3500, by = 1000)) +
   theme(panel.grid.minor = element_blank())
 
-# Combine them(WITHOUT ZOOM, BECASUE NOT NEEDED HERE )  
+# Combine them
 g_V1 <- g1_V1 + g2_V1 + plot_layout(heights = c(4, 1)) 
 g_V1
 
