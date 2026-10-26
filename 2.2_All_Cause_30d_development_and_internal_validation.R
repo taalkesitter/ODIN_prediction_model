@@ -376,7 +376,79 @@ final_predictions <- predict(finalmodel, xr, type = "response")
 #####################
 #COEFFICIENT LIST
 #####################
-coef_final <- as.matrix(exp(coef(finalmodel)))
+coef_OR <- as.matrix(exp(coef(finalmodel)))
+coef_b <- as.matrix(coef(finalmodel))
+
+coef_df <- data.frame(
+  b  = coef_b[, 1],
+  OR = coef_OR[, 1]
+)
 
 
+###########################
+# COEFFICIENT PLOT
+#########################
+fp <- data.frame(
+  predictor = rownames(coef_b),
+  estimate = as.numeric(coef_b[, 1])
+)
+                       
+# Remove intercept and predictors with zero coefficients
+fp <- subset(fp, predictor != "(Intercept)" & estimate != 0)
+
+#plot
+fp_pred <- ggplot(fp, aes(x = estimate, y = reorder(predictor, estimate))) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "grey60") +
+  geom_point(size = 2.5) +
+  labs(
+    title = "1-year All-Cause Mortality",
+    x = "Regression coefficient",
+    y = NULL
+  ) +
+  theme_minimal()
+
+
+ggsave("fp_pred_All_Cause_30d.png",fp_pred, width = 4, height = 6)
+
+
+#######################
+#SHAP VALUE PLOT
+######################
+library(fastshap)
+library(shapviz)
+
+
+#tells fastshap how to obtain predictions
+pred_fun <- function(object, newdata) {
+  predict(
+    object,
+    newx = newdata,
+    type = "response"
+  )[, 1]
+}
+
+#get shap values
+set.seed(123)
+
+shap_values <- fastshap::explain(
+  object = finalmodel,
+  X = xr,
+  pred_wrapper = pred_fun,
+  nsim = 50,
+  adjust = TRUE
+)
+
+#create the plot & save it
+shap_plot <- shapviz(shap_values, X = xr) |>
+  sv_importance(kind = "bee", max_display = 60) +
+  labs(title = "30-days All-Cause Mortality")
+
+ggsave(
+  filename = "SHAP_all_cause_30d.png",
+  plot = shap_plot,
+  width = 5,
+  height = 10,
+  units = "in",
+  dpi = 300
+)
 
