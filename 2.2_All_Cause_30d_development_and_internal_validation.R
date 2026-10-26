@@ -401,7 +401,7 @@ fp_pred <- ggplot(fp, aes(x = estimate, y = reorder(predictor, estimate))) +
   geom_vline(xintercept = 0, linetype = "dashed", color = "grey60") +
   geom_point(size = 2.5) +
   labs(
-    title = "1-year All-Cause Mortality",
+    title = "30-days All-Cause Mortality",
     x = "Regression coefficient",
     y = NULL
   ) +
