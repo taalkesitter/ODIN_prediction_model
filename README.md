@@ -15,7 +15,7 @@ The filed 2.1 to 2.4 contain the code for development and internal validation in
 File 3.1 and 4 contain code for the data preparation for the external evaluation of the Norwegian Sample and its description. 
 File 5.1 to 5.4 contain the code for the external evaluation of the models for 1-year all-cause mortality (5.1), 30-days all-cause mortality (5.2), 1-year overdose mortality (5.3) and 30-days overdose-mortality (5.4) in the Norwegian sample. Every file shows hereby first the simple evaluation, the the recalibration of the model to the new setting, and finally the external evaluation of the recalibrated model.
 
-### Subgroup Anlysis
+### Subgroup Analysis
 File 3.2 contains code for the data preparation for the model evaluation in the subgroups of interest. 
 File 6.1 to 6.4 contains code for the evaluation of the recalibrated models by place of birth (born inside/outside Norway)
 File 7 contains code for the evalcuation of the recalibrated models by place of release (released form remand/released from a different place than remand)
