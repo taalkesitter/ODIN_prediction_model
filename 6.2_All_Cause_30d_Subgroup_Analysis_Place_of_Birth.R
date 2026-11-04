@@ -61,7 +61,7 @@ yr <- as.numeric(yr)
 load("allcause30d_model.RData")
 
 lp_link <- predict(finalmodel, xr,  type="link")
-recal_model <- 3.66 + 1.71 * lp_link
+recal_model <- 3.88 + 1.74 * lp_link
 
 lp <- plogis(recal_model)
 
@@ -163,7 +163,7 @@ yr <- as.numeric(yr)
 # apply model on dataset
 ######################
 lp_link <- predict(finalmodel, xr,  type="link")
-recal_model <- 3.66 + 1.71 * lp_link
+recal_model <-3.88 + 1.74 * lp_link
 
 lp <- plogis(recal_model)
 
