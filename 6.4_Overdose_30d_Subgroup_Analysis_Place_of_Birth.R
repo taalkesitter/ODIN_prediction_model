@@ -60,7 +60,7 @@ yr <- as.numeric(yr)
 load("overdose30d_model.RData")
 
 lp_link <- predict(finalmodel, xr,  type="link")
-recal_model <- 7.72 + 2.33 * lp_link 
+recal_model <- 7.96 + 2.36 * lp_link 
 
 lp <- plogis(recal_model)
 
@@ -163,7 +163,7 @@ yr <- as.numeric(yr)
 # apply model on dataset
 ######################
 lp_link <- predict(finalmodel, xr,  type="link")
-recal_model <-  7.72 + 2.33 * lp_link
+recal_model <-  7.96 + 2.36 * lp_link 
 
 lp <- plogis(recal_model)
 
