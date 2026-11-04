@@ -60,7 +60,7 @@ yr <- as.numeric(yr)
 load("allcause1y_model.RData")
 
 lp_link <- predict(finalmodel, xr,  type="link")
-recal_model <- -1.33 + 0.751 * lp_link
+recal_model <- -0.85 + 0.81 * lp_link
 
 lp <- plogis(recal_model)
 
@@ -161,7 +161,7 @@ yr <- as.numeric(yr)
 load("allcause30d_model.RData")
 
 lp_link <- predict(finalmodel, xr,  type="link")
-recal_model <- 3.66 + 1.71 * lp_link
+recal_model <- 3.88 + 1.74 * lp_link
 
 lp <- plogis(recal_model)
 
@@ -267,7 +267,7 @@ yr <- as.numeric(yr)
 load("overdose1y_model.RData")
 
 lp_link <- predict(finalmodel, xr,  type="link")
-recal_model <- 1.64 + 1.39 * lp_link
+recal_model <- 1.73 + 1.4 * lp_link
 
 lp <- plogis(recal_model)
 
@@ -372,7 +372,7 @@ yr <- as.numeric(yr)
 load("overdose30d_model.RData")
 
 lp_link <- predict(finalmodel, xr,  type="link")
-recal_model <-7.72 + 2.33 * lp_link
+recal_model <-7.96 + 2.36 * lp_link
 
 lp <- plogis(recal_model)
 
@@ -493,7 +493,7 @@ yr <- as.numeric(yr)
 load("allcause1y_model.RData")
 
 lp_link <- predict(finalmodel, xr,  type="link")
-recal_model <- -1.33 + 0.751 * lp_link
+recal_model <- -0.85 + 0.81 * lp_link
 
 lp <- plogis(recal_model)
 
@@ -595,7 +595,7 @@ yr <- as.numeric(yr)
 load("allcause30d_model.RData")
 
 lp_link <- predict(finalmodel, xr,  type="link")
-recal_model <- 3.66 + 1.71 * lp_link 
+recal_model <- 3.88 + 1.74 * lp_link 
 
 lp <- plogis(recal_model)
 
@@ -702,7 +702,7 @@ yr <- as.numeric(yr)
 load("overdose1y_model.RData")
 
 lp_link <- predict(finalmodel, xr,  type="link")
-recal_model <- 1.64 + 1.39 * lp_link
+recal_model <- 1.73 + 1.4 * lp_link
 
 lp <- plogis(recal_model)
 
@@ -809,7 +809,7 @@ yr <- as.numeric(yr)
 load("overdose30d_model.RData")
 
 lp_link <- predict(finalmodel, xr,  type="link")
-recal_model <- 7.72 + 2.33 * lp_link
+recal_model <- 7.96 + 2.36 * lp_link
 
 lp <- plogis(recal_model)
 
